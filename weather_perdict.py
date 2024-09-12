@@ -7,10 +7,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 
-# Load data
 data = pd.read_csv('weather_data.csv')
 
-# Fill missing values with the median of the column
 data.fillna(data.median(), inplace=True)
 
 # Convert date/time column to datetime
@@ -69,7 +67,6 @@ future_predictions = loaded_model.predict(future_features)
 # Add predictions to the DataFrame
 future_data['Predicted Max Temp (°C)'] = future_predictions
 
-# Display the predicted data
 print(future_data)
 
 # Optional: Plot historical and predicted temperatures
